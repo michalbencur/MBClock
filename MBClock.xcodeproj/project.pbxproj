@@ -18,6 +18,8 @@
 		D7E1AE16132AE2D700873873 /* MBGradientBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E1AE15132AE2D700873873 /* MBGradientBackgroundView.m */; };
 		D7E1AE19132AE33E00873873 /* clock-background.png in Resources */ = {isa = PBXBuildFile; fileRef = D7E1AE17132AE33E00873873 /* clock-background.png */; };
 		D7E1AE1A132AE33E00873873 /* clock-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7E1AE18132AE33E00873873 /* clock-background@2x.png */; };
+		D7E1AE1E132AE60000873873 /* MBClockView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E1AE1D132AE60000873873 /* MBClockView.m */; };
+		D7E1AE20132AE8BD00873873 /* QuartzCore.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D7E1AE1F132AE8BD00873873 /* QuartzCore.framework */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -38,6 +40,9 @@
 		D7E1AE15132AE2D700873873 /* MBGradientBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBGradientBackgroundView.m; sourceTree = "<group>"; };
 		D7E1AE17132AE33E00873873 /* clock-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clock-background.png"; sourceTree = "<group>"; };
 		D7E1AE18132AE33E00873873 /* clock-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clock-background@2x.png"; sourceTree = "<group>"; };
+		D7E1AE1C132AE60000873873 /* MBClockView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBClockView.h; sourceTree = "<group>"; };
+		D7E1AE1D132AE60000873873 /* MBClockView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBClockView.m; sourceTree = "<group>"; };
+		D7E1AE1F132AE8BD00873873 /* QuartzCore.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = QuartzCore.framework; path = System/Library/Frameworks/QuartzCore.framework; sourceTree = SDKROOT; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -45,6 +50,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				D7E1AE20132AE8BD00873873 /* QuartzCore.framework in Frameworks */,
 				1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */,
 				1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */,
 				288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */,
@@ -110,6 +116,7 @@
 		29B97323FDCFA39411CA2CEA /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7E1AE1F132AE8BD00873873 /* QuartzCore.framework */,
 				1DF5F4DF0D08C38300B7A737 /* UIKit.framework */,
 				1D30AB110D05D00D00671497 /* Foundation.framework */,
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
@@ -120,6 +127,7 @@
 		D7E1AE10132ADF3700873873 /* Classes */ = {
 			isa = PBXGroup;
 			children = (
+				D7E1AE1B132AE5DF00873873 /* Clock */,
 				080E96DDFE201D6D7F000001 /* Basics */,
 				D7E1AE11132ADF5300873873 /* Utilities */,
 			);
@@ -133,6 +141,15 @@
 				D7E1AE15132AE2D700873873 /* MBGradientBackgroundView.m */,
 			);
 			name = Utilities;
+			sourceTree = "<group>";
+		};
+		D7E1AE1B132AE5DF00873873 /* Clock */ = {
+			isa = PBXGroup;
+			children = (
+				D7E1AE1C132AE60000873873 /* MBClockView.h */,
+				D7E1AE1D132AE60000873873 /* MBClockView.m */,
+			);
+			name = Clock;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -202,6 +219,7 @@
 				1D3623260D0F684500981E51 /* MBClockAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* MBClockViewController.m in Sources */,
 				D7E1AE16132AE2D700873873 /* MBGradientBackgroundView.m in Sources */,
+				D7E1AE1E132AE60000873873 /* MBClockView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};

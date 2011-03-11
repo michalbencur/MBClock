@@ -7,10 +7,13 @@
 //
 
 #import <UIKit/UIKit.h>
+#import "MBClockView.h"
 
 @interface MBClockViewController : UIViewController {
 
 }
+
+@property (nonatomic, retain) IBOutlet MBClockView *clockView;
 
 @end
 
