@@ -12,9 +12,12 @@
 		1D60589F0D05DD5A006BFB54 /* Foundation.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1D30AB110D05D00D00671497 /* Foundation.framework */; };
 		1DF5F4E00D08C38300B7A737 /* UIKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 1DF5F4DF0D08C38300B7A737 /* UIKit.framework */; };
 		288765A50DF7441C002DB57D /* CoreGraphics.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 288765A40DF7441C002DB57D /* CoreGraphics.framework */; };
-		2899E5220DE3E06400AC0155 /* MBClockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = 2899E5210DE3E06400AC0155 /* MBClockViewController.xib */; };
 		28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */ = {isa = PBXBuildFile; fileRef = 28AD733E0D9D9553002E5188 /* MainWindow.xib */; };
 		28D7ACF80DDB3853001CB0EB /* MBClockViewController.m in Sources */ = {isa = PBXBuildFile; fileRef = 28D7ACF70DDB3853001CB0EB /* MBClockViewController.m */; };
+		D7E1AE13132AE20E00873873 /* MBClockViewController.xib in Resources */ = {isa = PBXBuildFile; fileRef = D7E1AE12132AE20E00873873 /* MBClockViewController.xib */; };
+		D7E1AE16132AE2D700873873 /* MBGradientBackgroundView.m in Sources */ = {isa = PBXBuildFile; fileRef = D7E1AE15132AE2D700873873 /* MBGradientBackgroundView.m */; };
+		D7E1AE19132AE33E00873873 /* clock-background.png in Resources */ = {isa = PBXBuildFile; fileRef = D7E1AE17132AE33E00873873 /* clock-background.png */; };
+		D7E1AE1A132AE33E00873873 /* clock-background@2x.png in Resources */ = {isa = PBXBuildFile; fileRef = D7E1AE18132AE33E00873873 /* clock-background@2x.png */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXFileReference section */
@@ -24,13 +27,17 @@
 		1D6058910D05DD3D006BFB54 /* MBClock.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = MBClock.app; sourceTree = BUILT_PRODUCTS_DIR; };
 		1DF5F4DF0D08C38300B7A737 /* UIKit.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = UIKit.framework; path = System/Library/Frameworks/UIKit.framework; sourceTree = SDKROOT; };
 		288765A40DF7441C002DB57D /* CoreGraphics.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = CoreGraphics.framework; path = System/Library/Frameworks/CoreGraphics.framework; sourceTree = SDKROOT; };
-		2899E5210DE3E06400AC0155 /* MBClockViewController.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MBClockViewController.xib; sourceTree = "<group>"; };
 		28AD733E0D9D9553002E5188 /* MainWindow.xib */ = {isa = PBXFileReference; lastKnownFileType = file.xib; path = MainWindow.xib; sourceTree = "<group>"; };
 		28D7ACF60DDB3853001CB0EB /* MBClockViewController.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBClockViewController.h; sourceTree = "<group>"; };
 		28D7ACF70DDB3853001CB0EB /* MBClockViewController.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBClockViewController.m; sourceTree = "<group>"; };
 		29B97316FDCFA39411CA2CEA /* main.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = main.m; sourceTree = "<group>"; };
 		32CA4F630368D1EE00C91783 /* MBClock_Prefix.pch */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBClock_Prefix.pch; sourceTree = "<group>"; };
 		8D1107310486CEB800E47090 /* MBClock-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "MBClock-Info.plist"; plistStructureDefinitionIdentifier = "com.apple.xcode.plist.structure-definition.iphone.info-plist"; sourceTree = "<group>"; };
+		D7E1AE12132AE20E00873873 /* MBClockViewController.xib */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = file.xib; path = MBClockViewController.xib; sourceTree = "<group>"; };
+		D7E1AE14132AE2D700873873 /* MBGradientBackgroundView.h */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.h; path = MBGradientBackgroundView.h; sourceTree = "<group>"; };
+		D7E1AE15132AE2D700873873 /* MBGradientBackgroundView.m */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.c.objc; path = MBGradientBackgroundView.m; sourceTree = "<group>"; };
+		D7E1AE17132AE33E00873873 /* clock-background.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clock-background.png"; sourceTree = "<group>"; };
+		D7E1AE18132AE33E00873873 /* clock-background@2x.png */ = {isa = PBXFileReference; lastKnownFileType = image.png; path = "clock-background@2x.png"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -47,15 +54,16 @@
 /* End PBXFrameworksBuildPhase section */
 
 /* Begin PBXGroup section */
-		080E96DDFE201D6D7F000001 /* Classes */ = {
+		080E96DDFE201D6D7F000001 /* Basics */ = {
 			isa = PBXGroup;
 			children = (
 				1D3623240D0F684500981E51 /* MBClockAppDelegate.h */,
 				1D3623250D0F684500981E51 /* MBClockAppDelegate.m */,
 				28D7ACF60DDB3853001CB0EB /* MBClockViewController.h */,
 				28D7ACF70DDB3853001CB0EB /* MBClockViewController.m */,
-				2899E5210DE3E06400AC0155 /* MBClockViewController.xib */,
+				D7E1AE12132AE20E00873873 /* MBClockViewController.xib */,
 			);
+			name = Basics;
 			path = Classes;
 			sourceTree = "<group>";
 		};
@@ -70,7 +78,7 @@
 		29B97314FDCFA39411CA2CEA /* CustomTemplate */ = {
 			isa = PBXGroup;
 			children = (
-				080E96DDFE201D6D7F000001 /* Classes */,
+				D7E1AE10132ADF3700873873 /* Classes */,
 				29B97315FDCFA39411CA2CEA /* Other Sources */,
 				29B97317FDCFA39411CA2CEA /* Resources */,
 				8D1107310486CEB800E47090 /* MBClock-Info.plist */,
@@ -93,6 +101,8 @@
 			isa = PBXGroup;
 			children = (
 				28AD733E0D9D9553002E5188 /* MainWindow.xib */,
+				D7E1AE17132AE33E00873873 /* clock-background.png */,
+				D7E1AE18132AE33E00873873 /* clock-background@2x.png */,
 			);
 			path = Resources;
 			sourceTree = "<group>";
@@ -105,6 +115,24 @@
 				288765A40DF7441C002DB57D /* CoreGraphics.framework */,
 			);
 			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D7E1AE10132ADF3700873873 /* Classes */ = {
+			isa = PBXGroup;
+			children = (
+				080E96DDFE201D6D7F000001 /* Basics */,
+				D7E1AE11132ADF5300873873 /* Utilities */,
+			);
+			name = Classes;
+			sourceTree = "<group>";
+		};
+		D7E1AE11132ADF5300873873 /* Utilities */ = {
+			isa = PBXGroup;
+			children = (
+				D7E1AE14132AE2D700873873 /* MBGradientBackgroundView.h */,
+				D7E1AE15132AE2D700873873 /* MBGradientBackgroundView.m */,
+			);
+			name = Utilities;
 			sourceTree = "<group>";
 		};
 /* End PBXGroup section */
@@ -157,7 +185,9 @@
 			buildActionMask = 2147483647;
 			files = (
 				28AD733F0D9D9553002E5188 /* MainWindow.xib in Resources */,
-				2899E5220DE3E06400AC0155 /* MBClockViewController.xib in Resources */,
+				D7E1AE13132AE20E00873873 /* MBClockViewController.xib in Resources */,
+				D7E1AE19132AE33E00873873 /* clock-background.png in Resources */,
+				D7E1AE1A132AE33E00873873 /* clock-background@2x.png in Resources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -171,6 +201,7 @@
 				1D60589B0D05DD56006BFB54 /* main.m in Sources */,
 				1D3623260D0F684500981E51 /* MBClockAppDelegate.m in Sources */,
 				28D7ACF80DDB3853001CB0EB /* MBClockViewController.m in Sources */,
+				D7E1AE16132AE2D700873873 /* MBGradientBackgroundView.m in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -210,6 +241,7 @@
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
@@ -225,6 +257,7 @@
 				ARCHS = "$(ARCHS_UNIVERSAL_IPHONE_OS)";
 				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				GCC_C_LANGUAGE_STANDARD = c99;
+				GCC_VERSION = com.apple.compilers.llvm.clang.1_0;
 				GCC_WARN_ABOUT_RETURN_TYPE = YES;
 				GCC_WARN_UNUSED_VARIABLE = YES;
 				IPHONEOS_DEPLOYMENT_TARGET = 4.0;
