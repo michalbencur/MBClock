@@ -3,10 +3,11 @@
 //  MBClock
 //
 //  Created by Michal Bencur on 3/12/11.
-//  Copyright 2011 MB. All rights reserved.
+//  Copyright 2011 michalbencur.com. All rights reserved.
 //
 
 #import "MBClockView.h"
+#import "MBClockGlassReflectionLayer.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface MBClockView () {
@@ -14,8 +15,10 @@
 }
 
 - (void)setupNumbers;
+- (void)setupGlassReflection;
 
 @end
+
 
 @implementation MBClockView
 
@@ -28,6 +31,7 @@
 - (void)awakeFromNib
 {
     [self setupNumbers];
+    [self setupGlassReflection];
 }
 
 - (void)setupNumbers
@@ -55,6 +59,14 @@
 		numberAngle += (2 * M_PI / 12);
 		n++;
 	}
+}
+
+- (void)setupGlassReflection
+{
+    MBClockGlassReflectionLayer *layer = [MBClockGlassReflectionLayer layer];
+    layer.frame = CGRectMake(0, 0, self.bounds.size.width, self.bounds.size.height / 2);
+    [layer setNeedsDisplay];
+    [self.layer addSublayer:layer];
 }
 
 @end
