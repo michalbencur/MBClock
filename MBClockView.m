@@ -8,6 +8,7 @@
 
 #import "MBClockView.h"
 #import "MBClockGlassReflectionLayer.h"
+#import "MBClockHandLayer.h"
 #import <QuartzCore/QuartzCore.h>
 
 @interface MBClockView () {
@@ -15,6 +16,7 @@
 }
 
 - (void)setupNumbers;
+- (void)setupHands;
 - (void)setupGlassReflection;
 
 @end
@@ -31,6 +33,7 @@
 - (void)awakeFromNib
 {
     [self setupNumbers];
+    [self setupHands];
     [self setupGlassReflection];
 }
 
@@ -59,6 +62,25 @@
 		numberAngle += (2 * M_PI / 12);
 		n++;
 	}
+}
+
+- (void)setupHands
+{
+    CGPoint p = CGPointMake(self.bounds.size.width / 2.0, self.bounds.size.height / 2.0);
+    CGFloat h = 24.0;
+
+    MBClockHandLayer *bigHand = [MBClockHandLayer layer];
+    bigHand.color = [UIColor colorWithWhite:0.34 alpha:1.0];
+    bigHand.frame = CGRectMake(p.x - h/2, p.y - h/2, 90.0, h);
+    bigHand.transform = CATransform3DMakeRotation(-M_PI_2, 0, 0, 1.0);
+    [bigHand setNeedsDisplay];
+    [self.layer addSublayer:bigHand];
+
+    MBClockHandLayer *smallHand = [MBClockHandLayer layer];
+    smallHand.frame = CGRectMake(p.x - h/2, p.y - h/2, 70.0, h);
+    smallHand.transform = CATransform3DMakeRotation(-M_PI_2, 0, 0, 1.0);
+    [smallHand setNeedsDisplay];
+    [self.layer addSublayer:smallHand];
 }
 
 - (void)setupGlassReflection
