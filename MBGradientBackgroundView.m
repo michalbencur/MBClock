@@ -3,7 +3,7 @@
 //  Berater
 //
 //  Created by Michal Bencur on 10/5/10.
-//  Copyright 2010 MB. All rights reserved.
+//  Copyright 2010 michalbencur.com. All rights reserved.
 //
 
 #import "MBGradientBackgroundView.h"

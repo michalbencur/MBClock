@@ -3,7 +3,7 @@
 //  MBClock
 //
 //  Created by Michal Bencur on 3/11/11.
-//  Copyright 2011 Michal Bencur. All rights reserved.
+//  Copyright 2011 michalbencur.com. All rights reserved.
 //
 
 #import "MBClockViewController.h"
