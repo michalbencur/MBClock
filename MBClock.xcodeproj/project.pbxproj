@@ -76,7 +76,6 @@
 				D7E1AE12132AE20E00873873 /* MBClockViewController.xib */,
 			);
 			name = Basics;
-			path = Classes;
 			sourceTree = "<group>";
 		};
 		19C28FACFE9D520D11CA2CBB /* Products */ = {
@@ -137,7 +136,7 @@
 				080E96DDFE201D6D7F000001 /* Basics */,
 				D7E1AE11132ADF5300873873 /* Utilities */,
 			);
-			name = Classes;
+			path = Classes;
 			sourceTree = "<group>";
 		};
 		D7E1AE11132ADF5300873873 /* Utilities */ = {
