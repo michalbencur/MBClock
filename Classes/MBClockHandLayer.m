@@ -31,9 +31,12 @@
     CGRect rect = CGRectInset(self.bounds, 1, 1);
     CGFloat h = rect.size.height;
     CGPoint p = rect.origin;
-    CGPoint a = CGPointMake(p.x + h/2, p.y + h/2); 
+    CGPoint m = CGPointMake(p.x + h/2, p.y + h/2); // middle of the circles
     
     CGContextSaveGState(context);
+    CGContextSetShouldAntialias(context, YES);
+    CGContextSetAllowsAntialiasing(context, YES);
+    CGContextSetLineWidth(context, 1.0);
     if (self.color == nil) {
         self.color = [UIColor colorWithWhite:0.3 alpha:1.0];
     }
@@ -55,9 +58,10 @@
     // draw hand
     CGContextBeginPath(context);
     CGFloat angle = M_PI_4;
-    CGContextMoveToPoint(context, a.x + h*cos(angle)/2, a.y - h*sin(angle)/2);
-    CGContextAddLineToPoint(context, rect.size.width, a.y);
-    CGContextAddLineToPoint(context, a.x + h*cos(angle)/2, a.y + h*sin(angle)/2);
+    CGContextMoveToPoint(context, floorf(m.x + h*cosf(angle)/2), floorf(m.y - h*sinf(angle)/2));
+    CGContextAddLineToPoint(context, rect.size.width, m.y);
+    CGContextAddLineToPoint(context, floorf(m.x + h*cosf(angle)/2), floorf(m.y + h*sinf(angle)/2));
+
     CGContextClosePath(context);
     CGContextDrawPath(context, kCGPathFill);
     
