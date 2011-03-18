@@ -70,9 +70,9 @@
     CGFloat h = 24.0;
 
     MBClockHandLayer *bigHand = [MBClockHandLayer layer];
-    bigHand.needsDisplayOnBoundsChange = YES;
-    bigHand.color = [UIColor colorWithWhite:0.34 alpha:1.0];
-    bigHand.frame = CGRectMake(p.x - h/2, p.y - h/2, 90.0, h);
+    bigHand.color = [UIColor colorWithWhite:0.4 alpha:1.0];
+    bigHand.frame = CGRectMake(p.x - h/2, p.y - h/2, 100.0, h);
+    bigHand.contentsScale = [[UIScreen mainScreen] scale];
 //    bigHand.transform = CATransform3DMakeRotation(-M_PI_2, 0, 0, 1.0);
     [bigHand setNeedsDisplay];
     [self.layer addSublayer:bigHand];
@@ -80,6 +80,7 @@
     MBClockHandLayer *smallHand = [MBClockHandLayer layer];
     smallHand.frame = CGRectMake(p.x - h/2, p.y - h/2, 70.0, h);
     smallHand.transform = CATransform3DMakeRotation(-M_PI_2, 0, 0, 1.0);
+    smallHand.contentsScale = [[UIScreen mainScreen] scale];
     [smallHand setNeedsDisplay];
     [self.layer addSublayer:smallHand];
 }

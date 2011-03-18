@@ -19,16 +19,16 @@
     [super dealloc];
 }
 
-- (void)setFrame:(CGRect)frame
+- (void)setFrame:(CGRect)newFrame
 {
-    self.anchorPoint = CGPointMake(frame.size.height / 2 / frame.size.width, 0.5);
-    [super setFrame:frame];
+    self.anchorPoint = CGPointMake(newFrame.size.height / 2 / newFrame.size.width, 0.5);
+    [super setFrame:newFrame];
 }
 
 - (void)drawInContext:(CGContextRef)context
 {
     // inset the rect, otherwise there's not enough place for drawing
-    CGRect rect = CGRectInset(self.bounds, 1, 1);
+    CGRect rect = CGRectInset(self.bounds, 2, 2);
     CGFloat h = rect.size.height;
     CGPoint p = rect.origin;
     CGPoint m = CGPointMake(p.x + h/2, p.y + h/2); // middle of the circles
@@ -43,28 +43,30 @@
     CGContextSetFillColorWithColor(context, color.CGColor);
     
     // draw middle-clock outer circle
+    CGRect circleRect = CGRectMake(p.x, p.y, h, h);
     CGContextBeginPath(context);
-    CGContextAddEllipseInRect(context, CGRectMake(p.x, p.y, h, h));
+    CGContextAddEllipseInRect(context, circleRect);
     CGContextDrawPath(context, kCGPathFill);
-    
+
     // draw middle-clock inner clear circle
+    circleRect = CGRectInset(circleRect, 5, 5);
     CGContextSaveGState(context);
     CGContextBeginPath(context);
     CGContextSetBlendMode(context, kCGBlendModeClear);
-    CGContextAddEllipseInRect(context, CGRectMake(p.x + h / 4.0, p.y + h / 4.0, h / 2.0, h / 2.0));
+    CGContextAddEllipseInRect(context, circleRect);
     CGContextDrawPath(context, kCGPathFill);
     CGContextRestoreGState(context);
     
     // draw hand
     CGContextBeginPath(context);
-    CGFloat angle = M_PI_4;
-    CGContextMoveToPoint(context, floorf(m.x + h*cosf(angle)/2), floorf(m.y - h*sinf(angle)/2));
+    CGFloat angle = M_PI_4/2;
+    CGContextMoveToPoint(context, m.x + h*cosf(angle)/2, m.y - h*sinf(angle)/2);
     CGContextAddLineToPoint(context, rect.size.width, m.y);
-    CGContextAddLineToPoint(context, floorf(m.x + h*cosf(angle)/2), floorf(m.y + h*sinf(angle)/2));
+    CGContextAddLineToPoint(context, m.x + h*cosf(angle)/2, m.y + h*sinf(angle)/2);
 
     CGContextClosePath(context);
     CGContextDrawPath(context, kCGPathFill);
-    
+
     CGContextRestoreGState(context);
 }
 
